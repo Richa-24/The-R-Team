@@ -1,0 +1,11 @@
+#login_form
+{
+    margin-top: 10%;
+    width: 50%;
+    margin-left: 25%;
+}
+
+#login_form> input
+{
+    width: 75%;
+}

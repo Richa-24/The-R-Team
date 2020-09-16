@@ -30,7 +30,7 @@ export default class Login extends React.Component {
           method: "post",
           headers: {
             "Content-Type": "application/json",
-            GrantType: "password",
+            "GrantType": "password",
           },
           data: this.state,
         })

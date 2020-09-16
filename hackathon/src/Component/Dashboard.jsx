@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Template from "./Template";
 
 export default class Dashboard extends React.Component {
   constructor(props) {
@@ -21,7 +22,11 @@ export default class Dashboard extends React.Component {
         {gotItem === null ? (
           <Link to="/login">Login</Link>
         ) : (
-          <button onClick={this.handleLogout}>Logout</button>
+          <>
+            <button onClick={this.handleLogout}>Logout</button>
+            <Template />
+            <h2>hey</h2>
+          </>
         )}
       </>
     );

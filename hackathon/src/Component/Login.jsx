@@ -23,7 +23,7 @@ export default class Login extends React.Component {
   handleSubmit = () => {
     const { user_email, password, org_domain } = this.state;
 
-    if (user_email != "" && password != "" && org_domain != "") {
+    if (user_email !== "" && password !== "" && org_domain !== "") {
       axios
         .request({
           url: `https://${org_domain}.revvsales.com/api/v2/auth/initiate-auth`,

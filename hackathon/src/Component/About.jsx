@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./Style.module.css"
 
 export default class About extends React.Component {
   constructor(props) {
@@ -8,6 +9,6 @@ export default class About extends React.Component {
   }
 
   render() {
-    return <h1>About</h1>;
+    return <h1 className={styles.AboutText}>About</h1>;
   }
 }

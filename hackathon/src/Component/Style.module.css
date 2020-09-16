@@ -1,0 +1,35 @@
+.homeAndAboutContainer
+{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    height: 55px;
+    color: white;
+}
+
+.homeAndAboutContainer>*
+{
+    flex: 1;
+    text-decoration: none;
+}
+
+.homeAndAboutContainer>*:hover
+{
+    color: blue;
+}
+
+.homeAndAboutContainer:first-child
+{
+    margin-left: 80%;
+}
+
+.DashboardLoginMainComponent
+{
+    margin-left: 2%;
+    text-align: center;
+}
+
+.AboutText
+{
+    text-align: center;
+}

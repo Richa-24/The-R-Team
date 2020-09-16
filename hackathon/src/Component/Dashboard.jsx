@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Template from "./Template";
+import styles from "./Style.module.css"
 
 export default class Dashboard extends React.Component {
   constructor(props) {

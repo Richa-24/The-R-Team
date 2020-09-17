@@ -29,12 +29,47 @@ export default class Document extends React.Component {
     });
   };
 
+  handleAcceptance = () => {
+    let org_domain = JSON.parse(window.localStorage.getItem("user")).subdomain;
+    let doc_id = window.localStorage.getItem("doc_id");
+    let token = JSON.parse(window.localStorage.getItem("token"));
+    var data = {
+      acceptors: [
+        {
+          user_email: "singhricha0724@outlook.com",
+          first_name: "Richa",
+          last_name: "Singh",
+        },
+        {
+          user_email: "jogdandrutvik7@gmail.com",
+          first_name: "Rutvik",
+          last_name: "Jogdand",
+        },
+      ],
+      email_message: "Please accept my application",
+    };
+    axios
+      .request({
+        url: `https://${org_domain}.revvsales.com/api/v2/doc-acceptors/${doc_id}`,
+        method: "post",
+        headers: {
+          AccessToken: token,
+        },
+        data: data,
+      })
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+  };
+
   handleCreateDoc = () => {
     let docTitle = window.localStorage.getItem("template_title");
     let id = JSON.parse(window.localStorage.getItem("template_id"));
     let org_domain = JSON.parse(window.localStorage.getItem("user")).subdomain;
     let token = JSON.parse(window.localStorage.getItem("token"));
-    var data = JSON.stringify({ template_id: id, title: docTitle });
+    var data = JSON.stringify({
+      template_id: id,
+      title: docTitle + "-" + this.state.student_name.toUpperCase(),
+    });
 
     console.log(id);
 
@@ -56,6 +91,7 @@ export default class Document extends React.Component {
           )
           .then((resp) => {
             let object_id = res.data.Document.object_id;
+            window.localStorage.setItem("doc_id", res.data.Document.id);
             // let obj_type= "DOC"
             let data = { object_id: object_id, object_type: "DOC" };
             // console.log(resp);
@@ -154,7 +190,15 @@ export default class Document extends React.Component {
 
         {isLink ? (
           <div>
-            Here is your document link: <a>{link}</a>
+            <div>
+              <a href={link}> Here is your document link</a>
+            </div>
+
+            <div>
+              <button onClick={this.handleAcceptance}>
+                Send for acceptance
+              </button>
+            </div>
           </div>
         ) : null}
       </>

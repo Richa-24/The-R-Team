@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./Style.module.css";
 import axios from "axios";
+import swal from "sweetalert";
 
 export default class Document extends React.Component {
   constructor(props) {
@@ -36,7 +37,7 @@ export default class Document extends React.Component {
     var data = {
       acceptors: [
         {
-          user_email: "singhricha0724@outlook.com",
+          user_email: "singhricha0724@gmail.com",
           first_name: "Richa",
           last_name: "Singh",
         },
@@ -57,7 +58,9 @@ export default class Document extends React.Component {
         },
         data: data,
       })
-      .then((res) => console.log(res))
+      .then((res) =>
+        swal("Your document has been sent successfully for acceptance!")
+      )
       .catch((err) => console.log(err));
   };
 
@@ -129,12 +132,18 @@ export default class Document extends React.Component {
       isLink,
     } = this.state;
     return (
-      <>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
         <div className={styles.newDocBox}>
           <div>
-            <div className={styles.FillFields}>Fill the fields</div>
+            <h2 className={styles.FillFields}>Fill the fields</h2>
             <label>
-             <div>Name: </div> 
+              <div>Name: </div>
               <input
                 onChange={this.handleDocChange}
                 name="student_name"
@@ -190,7 +199,7 @@ export default class Document extends React.Component {
 
         {isLink ? (
           <div>
-            <div>
+            <div style={{ margin: "20px" }}>
               <a href={link}> Here is your document link</a>
             </div>
 
@@ -201,7 +210,7 @@ export default class Document extends React.Component {
             </div>
           </div>
         ) : null}
-      </>
+      </div>
     );
   }
 }

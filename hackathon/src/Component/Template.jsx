@@ -36,8 +36,9 @@ export default class Template extends React.Component {
       .catch((err) => console.log(err));
   }
 
-  handleNewDoc = (id) => {
+  handleNewDoc = (id, title) => {
     let template_id = window.localStorage.setItem("template_id", id);
+    let template_title = window.localStorage.setItem("template_title", title);
 
     this.setState({
       isDoc: true,
@@ -61,7 +62,7 @@ export default class Template extends React.Component {
                 <div className={style.templateTitle}>{item.title}</div>
                 <button
                   onClick={() => {
-                    this.handleNewDoc(item.id);
+                    this.handleNewDoc(item.id, item.title);
                   }}
                 >
                   Create New Doc

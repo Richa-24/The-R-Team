@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import style from "./Style.module.css";
+import Document from "./Document";
 
 export default class Template extends React.Component {
   constructor(props) {
@@ -8,6 +9,7 @@ export default class Template extends React.Component {
 
     this.state = {
       Templates: [],
+      isDoc: false,
     };
   }
 
@@ -36,16 +38,21 @@ export default class Template extends React.Component {
 
   handleNewDoc = (id) => {
     let template_id = window.localStorage.setItem("template_id", id);
+
+    this.setState({
+      isDoc: true,
+    });
   };
 
   render() {
+    const { isDoc } = this.state;
     console.log(this.state.Templates);
     return (
       <>
         <h3>Templates</h3>
         <div className={style.templatesBox}>
           {this.state.Templates.map((item, index) => {
-            console.log(item.title);
+            // console.log(item.title);
             return (
               <div key={item.id}>
                 <div>
@@ -63,6 +70,8 @@ export default class Template extends React.Component {
             );
           })}
         </div>
+
+        {isDoc ? <Document /> : null}
       </>
     );
   }

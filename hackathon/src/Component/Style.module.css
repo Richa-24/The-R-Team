@@ -49,3 +49,14 @@
   border-bottom: 1px solid gray;
   background-color: rgba(194, 129, 82, 0.418);
 }
+
+.newDocBox {
+  width: 500px;
+  height: auto;
+  border: 1px solid gray;
+  margin: 30px;
+}
+
+.newDocBox > div {
+  padding: 10px;
+}

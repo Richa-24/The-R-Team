@@ -40,7 +40,7 @@
   height: 400px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   border-radius: 5px;
-  margin: 10px;
+  margin: 20px 10px;
 }
 
 .templateTitle {
@@ -66,4 +66,33 @@
 
 .newDocBox > div {
   padding: 10px;
+}
+
+.loginBtn {
+  font-size: 25px;
+  text-decoration: none;
+  width: 20px;
+  height: 10px;
+  /* border: 1px solid gray; */
+  padding: 5px 8px;
+  background-color: rgb(69, 151, 223);
+  color: white;
+  border-radius: 4px;
+}
+
+.loginBtn:hover {
+  background-color: rgb(23, 84, 148);
+}
+
+.logoName {
+  font-family: "Grandstander", cursive;
+  font-weight: "1000";
+  font-size: "50px";
+}
+
+.para {
+  font-family: "Amatic SC", cursive;
+  line-height: 50px;
+  padding: 5px 50px;
+  font-size: 22px;
 }

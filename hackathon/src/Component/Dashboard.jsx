@@ -19,9 +19,15 @@ export default class Dashboard extends React.Component {
     let gotItem = JSON.parse(window.localStorage.getItem("user"));
     return (
       <div>
-        <h1>Dashboard</h1>
+        <img
+          src="https://www.creativefabrica.com/wp-content/uploads/2018/10/Blue-Letter-s-modern-Logo-by-yahyaanasatokillah-580x387.jpg"
+          width="400"
+        />
+        <h1 className={styles.logoName}>Schomato</h1>
         {gotItem === null ? (
-          <Link to="/login">Login</Link>
+          <Link to="/login" className={styles.loginBtn}>
+            Login
+          </Link>
         ) : (
           <>
             <button onClick={this.handleLogout}>Logout</button>

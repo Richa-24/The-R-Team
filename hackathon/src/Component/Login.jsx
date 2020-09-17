@@ -55,7 +55,7 @@ export default class Login extends React.Component {
         <h1>Login</h1>
         <div style={{ marginBottom: "10px" }}>
           <label>
-            <div style={{ marginLeft: "-10%" }}> Email:</div>
+            <div style={{ marginLeft: "-18%" }}> Email:</div>
             <input
               onChange={this.handleChange}
               name="user_email"
@@ -66,7 +66,7 @@ export default class Login extends React.Component {
 
         <div style={{ marginBottom: "10px" }}>
           <label>
-            <div style={{ marginLeft: "-8%" }}> Password:</div>
+            <div style={{ marginLeft: "-17%" }}> Password:</div>
             <input
               onChange={this.handleChange}
               name="password"
@@ -76,7 +76,7 @@ export default class Login extends React.Component {
           <br />
           <div style={{ marginBottom: "10px", marginTop: "10px" }}>
             <label>
-              <div style={{ marginLeft: "-6%" }}> Org Domain:</div>
+              <div style={{ marginLeft: "-15%" }}> Org Domain:</div>
               <input
                 onChange={this.handleChange}
                 name="org_domain"

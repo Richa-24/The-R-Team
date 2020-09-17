@@ -71,7 +71,7 @@ export default class Template extends React.Component {
             );
           })}
         </div>
-
+        <div style={{ height: "100px" }}></div>
         {isDoc ? <Document /> : null}
       </>
     );

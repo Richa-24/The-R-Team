@@ -1,12 +1,13 @@
 import React from "react";
 import axios from "axios";
+import style from "./Style.module.css";
 
 export default class Template extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      data: [],
+      Templates: [],
     };
   }
 
@@ -25,28 +26,43 @@ export default class Template extends React.Component {
       })
       .then((res) => {
         this.setState({
-          data: [...this.state.data, res.data.Templates],
+          Templates: [...this.state.Templates, ...res.data.Templates],
         });
-        // console.log(res);
-        // let templates = res.data.Templates;
-        // console.log(templates);
 
-        // for (let i = 0; i < templates.length; i++) {
-        //   console.log(templates[i].title);
-        // }
+        console.log(res);
       })
       .catch((err) => console.log(err));
   }
 
+  handleNewDoc = (id) => {
+    let template_id = window.localStorage.setItem("template_id", id);
+  };
+
   render() {
-    // const { data } = this.state;
-    console.log(this.state.data);
+    console.log(this.state.Templates);
     return (
       <>
-        {this.state.data.map((item) => {
-          console.log(item.id);
-          return <div>{item.title}</div>;
-        })}
+        <h3>Templates</h3>
+        <div className={style.templatesBox}>
+          {this.state.Templates.map((item, index) => {
+            console.log(item.title);
+            return (
+              <div key={item.id}>
+                <div>
+                  <img src={item.thumbnail} width="100%" height="300" />
+                </div>
+                <div className={style.templateTitle}>{item.title}</div>
+                <button
+                  onClick={() => {
+                    this.handleNewDoc(item.id);
+                  }}
+                >
+                  Create New Doc
+                </button>
+              </div>
+            );
+          })}
+        </div>
       </>
     );
   }

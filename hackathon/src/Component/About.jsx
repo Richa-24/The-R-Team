@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./Style.module.css"
+import styles from "./Style.module.css";
 
 export default class About extends React.Component {
   constructor(props) {

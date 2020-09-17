@@ -30,7 +30,7 @@ export default class Login extends React.Component {
           method: "post",
           headers: {
             "Content-Type": "application/json",
-            "GrantType": "password",
+            GrantType: "password",
           },
           data: this.state,
         })
@@ -53,9 +53,9 @@ export default class Login extends React.Component {
     return (
       <>
         <h1>Login</h1>
-        <div style={{marginBottom: "10px"}}>
+        <div style={{ marginBottom: "10px" }}>
           <label>
-           <div style={{marginLeft: "-10%"}}> Email:</div>
+            <div style={{ marginLeft: "-10%" }}> Email:</div>
             <input
               onChange={this.handleChange}
               name="user_email"
@@ -64,19 +64,19 @@ export default class Login extends React.Component {
           </label>
         </div>
 
-        <div style={{marginBottom: "10px"}}>
+        <div style={{ marginBottom: "10px" }}>
           <label>
-          <div style={{marginLeft: "-8%"}}> Password:</div>
+            <div style={{ marginLeft: "-8%" }}> Password:</div>
             <input
               onChange={this.handleChange}
               name="password"
               value={password}
             />
           </label>
-          <br/>
-          <div style={{marginBottom: "10px", marginTop: "10px"}}>
+          <br />
+          <div style={{ marginBottom: "10px", marginTop: "10px" }}>
             <label>
-            <div style={{marginLeft: "-6%"}}> Org Domain:</div>
+              <div style={{ marginLeft: "-6%" }}> Org Domain:</div>
               <input
                 onChange={this.handleChange}
                 name="org_domain"
@@ -84,9 +84,11 @@ export default class Login extends React.Component {
               />
             </label>
           </div>
-          <br/>
+          <br />
           <div>
-            <button style={{padding: "2px 5px"}} onClick={this.handleSubmit}>Submit</button>
+            <button style={{ padding: "2px 5px" }} onClick={this.handleSubmit}>
+              Submit
+            </button>
           </div>
         </div>
       </>

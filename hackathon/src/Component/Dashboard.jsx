@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Template from "./Template";
-import styles from "./Style.module.css"
+import styles from "./Style.module.css";
 
 export default class Dashboard extends React.Component {
   constructor(props) {
@@ -26,7 +26,6 @@ export default class Dashboard extends React.Component {
           <>
             <button onClick={this.handleLogout}>Logout</button>
             <Template />
-            <h2>hey</h2>
           </>
         )}
       </>

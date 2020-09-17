@@ -1,5 +1,5 @@
 import React from "react";
-import style from "./Style.module.css";
+import styles from "./Style.module.css";
 import axios from "axios";
 
 export default class Document extends React.Component {
@@ -130,11 +130,11 @@ export default class Document extends React.Component {
     } = this.state;
     return (
       <>
-        <div className={style.newDocBox}>
+        <div className={styles.newDocBox}>
           <div>
-            <h2>Fill the fields</h2>
+            <div className={styles.FillFields}>Fill the fields</div>
             <label>
-              Name:
+             <div>Name: </div> 
               <input
                 onChange={this.handleDocChange}
                 name="student_name"
@@ -145,14 +145,14 @@ export default class Document extends React.Component {
 
           <div>
             <label>
-              Date:
+              <div>Date:</div>
               <input onChange={this.handleDocChange} name="date" value={date} />
             </label>
           </div>
 
           <div>
             <label>
-              Subject:
+              <div>Subject:</div>
               <input
                 onChange={this.handleDocChange}
                 name="subject"
@@ -163,7 +163,7 @@ export default class Document extends React.Component {
 
           <div>
             <label>
-              Faculty:
+              <div>Faculty:</div>
               <input
                 onChange={this.handleDocChange}
                 name="faculty"
@@ -174,7 +174,7 @@ export default class Document extends React.Component {
 
           <div>
             <label>
-              Incharge Name:
+              <div>Incharge Name: </div>
               <input
                 onChange={this.handleDocChange}
                 name="incharge_name"

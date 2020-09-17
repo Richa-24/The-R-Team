@@ -50,7 +50,7 @@ export default class Template extends React.Component {
     console.log(this.state.Templates);
     return (
       <>
-        <h3>Templates</h3>
+        <h3>Templates:</h3>
         <div className={style.templatesBox}>
           {this.state.Templates.map((item, index) => {
             // console.log(item.title);

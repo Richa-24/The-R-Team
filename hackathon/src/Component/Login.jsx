@@ -68,6 +68,7 @@ export default class Login extends React.Component {
           <label>
             <div style={{ marginLeft: "-17%" }}> Password:</div>
             <input
+              type="password"
               onChange={this.handleChange}
               name="password"
               value={password}

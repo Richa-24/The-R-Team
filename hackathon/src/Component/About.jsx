@@ -21,7 +21,7 @@ export default class About extends React.Component {
           multiple signatures and authorizations and to make the entire process
           as simple as ordering your favourite dish from the restaurant we have
           come up with a solution. Using the templates given on the dashboard,
-          you can select the type of document you wan to use from a variety of
+          you can select the type of document you want to use from a variety of
           legal and commonly used documents and click on "Create New Doc", after
           this all you have to do is fill in your details and who you want to
           send it to and click on submit. We'll send you your document in a
